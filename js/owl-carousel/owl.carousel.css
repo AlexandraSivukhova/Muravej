@@ -1,0 +1,318 @@
+/*
+ *	Core Owl Carousel CSS File
+ *	v1.3.3
+ */
+
+/* clearfix */
+.owl-carousel .owl-wrapper:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+/* display none until init */
+.owl-carousel {
+    display: none;
+    position: relative;
+    width: 100%;
+    -ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper {
+    display: none;
+    position: relative;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+}
+.owl-carousel .owl-wrapper-outer {
+    overflow: hidden;
+    position: relative;
+}
+.owl-carousel .owl-wrapper-outer.autoHeight {
+    -webkit-transition: height 500ms ease-in-out;
+    -moz-transition: height 500ms ease-in-out;
+    -ms-transition: height 500ms ease-in-out;
+    -o-transition: height 500ms ease-in-out;
+    transition: height 500ms ease-in-out;
+}
+.owl-carousel .owl-item {
+    float: left;
+}
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div {
+    cursor: pointer;
+}
+.owl-controls {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* mouse grab icon */
+.grabbing { 
+    cursor:url(grabbing.png) 8 8, move;
+}
+
+/* fix */
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+}
+
+/* custom */
+.owl-theme .owl-controls {
+    height: 0;
+    text-align: center;
+}
+
+/* Styling Next and Prev buttons */
+.owl-theme .owl-controls .owl-buttons div {
+    color: #FFF;
+    display: block;
+    zoom: 1;
+    width: 45px;
+    height: 100%;
+    text-indent: -999999px;
+    background: url(sliderarrow.png) 14px center no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    transition: 0.3s;
+    margin: auto;
+}
+.owl-theme .owl-controls .owl-buttons div.owl-next {
+    right: 15px;
+    left: auto;
+    background-position: -30px center;
+}
+.owl-theme .owl-controls .owl-buttons div:hover {
+    /*transform: scale(1.2);*/
+}
+
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover {
+    filter: Alpha(Opacity=100); /* IE7 fix */
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* Styling Pagination */
+.owl-theme .owl-controls .owl-page {
+    font-family: "DINCondensedC";
+    color: #fff;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    text-align: center;
+
+    width: 185px;
+    height: 45px;
+    background-color: #3b3b3b;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.owl-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 780px;
+
+    top: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.owl-theme .owl-controls .owl-page:hover,
+.owl-theme .owl-controls .owl-page.active,
+.owl-theme .owl-controls .owl-page.active_group {
+    background: #c2343e;
+}
+
+/* If PaginationNumbers is true */
+.owl-theme .owl-controls .owl-page span.owl-numbers {
+    height: auto;
+    width: auto;
+    color: #FFF;
+    padding: 2px 10px;
+    font-size: 12px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+/* preloading images */
+.owl-item.loading {
+    min-height: 150px;
+    background: url(AjaxLoader.gif) no-repeat center center
+}
+.one_slide img {
+    display: block;
+    width: 100%;
+}
+.one_slide .box_text--flex img {
+    width: inherit;
+}
+
+.main_slider {
+    width: auto !important;
+    max-width: 100vw;
+}
+.main_slider.owl-theme .owl-controls .owl-buttons div {
+    background: rgba(0, 0, 0, 0.25);
+    width: 75px;
+    overflow: hidden;
+}
+
+.owl-buttons .arrow_next {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    transform: rotate(180deg) translateY(50%) translateX(50%);
+    fill: #fff;
+}
+.owl-buttons .arrow_prev {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    transform: translateY(-50%) translateX(-50%);
+    fill: #fff;
+}
+.main_slider.owl-theme .owl-controls .owl-buttons div:hover {
+    background: rgba(255, 255, 255, 0.7); 
+}
+.owl-prev:hover .arrow_prev {
+    fill: #bf2c37;
+}
+.owl-next:hover .arrow_next {
+    fill: #bf2c37;
+}
+.main_slider.owl-theme .owl-pagination {
+    top: 20px;
+    position: absolute;
+}
+/*.main_slider.owl-theme .owl-pagination .owl-page:nth-child(n+5) {
+    display: none;
+}*/
+.main_slider.owl-theme .owl-controls .owl-buttons div.owl-next {
+    right: 0;
+}
+
+#slider-2 {
+    width: 805px;
+    margin: auto;
+}
+#slider-2 .owl-buttons .owl-prev {
+    right: calc(100% + 45px);
+    left: inherit;
+    background: none;
+}
+#slider-2 .owl-buttons .owl-next {
+    left: calc(100% + 20px);
+    right: inherit;
+    background: none;
+}
+#slider-2 .owl-prev .arrow_prev,
+#slider-2 .owl-next .arrow_next {
+    fill: #303030;
+}
+#slider-2 .owl-prev:hover .arrow_prev,
+#slider-2 .owl-next:hover .arrow_next {
+    fill: #c13440;
+}
+#slider-2 .owl-pagination { display:none !important; }
+
+
+/* .main_slider.owl-theme .owl-controls .owl-buttons div:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    content: '';
+    border: 2px solid #fff;
+    border-right: none;
+    border-bottom: none;
+    z-index: 99;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+.main_slider.owl-theme .owl-controls .owl-buttons div.owl-next:before {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+}
+.main_slider.owl-theme .owl-controls .owl-buttons div:after {
+    display: block;
+    position: absolute;
+    content:'';
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    right: 0;
+    z-index: 5; */
+    /*background: rgba(106, 117, 48, 0.44);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;*/
+/* }
+.main_slider.owl-theme .owl-controls .owl-buttons div.owl-prev:after {
+    left: -100%;
+}
+.main_slider.owl-theme .owl-controls .owl-buttons div:hover:after {
+     left: 0;
+} */
+/*.main_slider .owl-buttons div .preview {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    text-align: left;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.main_slider .owl-buttons div .preview img {
+    display: block;
+}
+.main_slider .owl-buttons div.owl-prev .preview img {
+    display: inline-block;
+}
+.main_slider .owl-buttons div.owl-prev .preview {
+    left: -100%;
+    text-align:right;
+}
+.main_slider .owl-buttons div:hover .preview {
+    left: 0;
+}*/
